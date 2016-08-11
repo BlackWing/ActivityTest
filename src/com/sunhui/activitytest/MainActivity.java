@@ -7,15 +7,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewDebug.IntToString;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	private TextView textview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		textview = (TextView) findViewById(R.id.textView);
 
 	}
 
@@ -33,6 +35,16 @@ public class MainActivity extends Activity {
 			Intent intent2 = new Intent(Intent.ACTION_DIAL);
 			intent2.setData(Uri.parse("tel:15720615167"));
 			startActivity(intent2);
+			break;
+		case R.id.button3:
+			String data = "ÄãÊÇ×îË§µÄ";
+			Intent intent3 = new Intent(this, SecondActivity.class);
+			intent3.putExtra("data", data);
+			startActivity(intent3);
+			break;
+		case R.id.button4:
+			Intent intent4 = new Intent(this, SecondActivity.class);
+			startActivityForResult(intent4, 1);
 			break;
 		}
 
@@ -63,6 +75,22 @@ public class MainActivity extends Activity {
 
 		}
 		return true;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case 1:
+			if (resultCode == RESULT_OK) {
+				textview.setText(data.getStringExtra("sun"));
+			}
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }

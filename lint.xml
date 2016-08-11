@@ -2,7 +2,9 @@
 <lint>
     <issue id="HardcodedText">
         <ignore path="res/layout/activity_main.xml" />
+        <ignore path="res/layout/activity_second.xml" />
         <ignore path="res/menu/main.xml" />
     </issue>
     <issue id="OldTargetApi" severity="ignore" />
+    <issue id="RtlHardcoded" severity="ignore" />
 </lint>
