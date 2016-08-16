@@ -1,12 +1,11 @@
 package com.sunhui.activitytest;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class SecondActivity extends Activity {
+public class SecondActivity extends BaseActivity {
 	private TextView textView;
 
 	@Override

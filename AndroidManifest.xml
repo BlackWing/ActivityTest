@@ -25,10 +25,15 @@
         <activity
             android:name=".SecondActivity"
             android:label="@string/title_activity_second" >
-            <intent-filter >
-                <action android:name="com.sunhui.ACTION_START"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+            <intent-filter>
+                <action android:name="com.sunhui.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ThirdActivity"
+            android:label="@string/title_activity_third" >
         </activity>
     </application>
 
